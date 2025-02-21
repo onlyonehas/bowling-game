@@ -43,6 +43,20 @@ describe("Player Class", () => {
     expect(player.getScore()).toBe(24);
   });
 
+  test("Each player has their own score", () => {
+    const player1 = new Player("Alice");
+    const player2 = new Player("Bob");
+    const player3 = new Player("Charlie");
+
+    player1.roll(5);
+    player2.roll(7);
+    player3.roll(3);
+
+    expect(player1.getScore()).toBe(5);
+    expect(player2.getScore()).toBe(7);
+    expect(player3.getScore()).toBe(3);
+  });
+
   test("Multiple strikes give correct bonuses", () => {
     const player = new Player("Alice");
     player.roll(10);
